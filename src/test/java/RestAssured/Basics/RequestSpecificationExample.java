@@ -1,27 +1,22 @@
-package RestAssured.ApiAutomation.com.rest;
+package RestAssured.Basics;
 
 import io.restassured.specification.RequestSpecification;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
-import static io.restassured.RestAssured.with;
 
-public class ReuseRequestSpecification {
-
-    RequestSpecification requestSpecification;
+public class RequestSpecificationExample {
     String gorestUrl = "https://gorest.co.in/public/v2";
 
-    @BeforeTest
-    public void beforeTest() {
-        requestSpecification = with().
-                baseUri(gorestUrl).
-                header("Content-Type", "application/json");
-    }
-
-
+    /**
+     * By using RequestSpecification interface reference
+     */
     @Test
     public void requestSpecExampleOne() {
+        RequestSpecification requestSpecification = given().
+                baseUri(gorestUrl).
+                header("Content-Type", "application/json");
+
         given(requestSpecification).
                 log().all().
                 when().
@@ -30,12 +25,21 @@ public class ReuseRequestSpecification {
                 log().all().
                 assertThat().statusCode(200);
     }
+
+
+    /**
+     * By using RequestSpecification interface reference and spec() method
+     */
     @Test
     public void requestSpecExampleTwo() {
-        given(requestSpecification).
+        RequestSpecification requestSpecification = given().
+                baseUri(gorestUrl).
+                header("Content-Type", "application/json");
+
+        given().spec(requestSpecification).
                 log().all().
                 when().
-                get("/users/3697").
+                get("/users").
                 then().
                 log().all().
                 assertThat().statusCode(200);

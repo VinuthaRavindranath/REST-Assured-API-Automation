@@ -1,4 +1,4 @@
-package RestAssured.ApiAutomation.com.rest;
+package RestAssured.Basics;
 
 import com.github.javafaker.Faker;
 import io.restassured.RestAssured;

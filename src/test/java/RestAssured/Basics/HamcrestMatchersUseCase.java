@@ -1,4 +1,4 @@
-package RestAssured.ApiAutomation.com.rest;
+package RestAssured.Basics;
 
 import org.testng.annotations.Test;
 

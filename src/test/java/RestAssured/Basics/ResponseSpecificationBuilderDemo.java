@@ -1,4 +1,4 @@
-package RestAssured.ApiAutomation.com.rest;
+package RestAssured.Basics;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;

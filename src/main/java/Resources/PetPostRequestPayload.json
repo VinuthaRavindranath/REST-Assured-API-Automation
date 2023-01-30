@@ -1,0 +1,28 @@
+{
+  "id": 2727,
+  "category":
+  {
+    "id": 11,
+    "name": "Lab"
+  }
+,
+  "name": "Simba",
+  "photoUrls": [
+    "https://simba.com"
+  ],
+  "tags": [
+    {
+      "id": 123,
+      "name": "Simba"
+    },
+    {
+      "id": 345,
+      "name": "Deno"
+    },
+    {
+      "id": 678,
+      "name": "Fluffy"
+    }
+  ],
+  "status": "available"
+}
